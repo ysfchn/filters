@@ -1,0 +1,9 @@
+! Enable VSIX extension download button in Visual Studio Marketplace by spoofing client feature flags.
+! Also works when "ssr=false" is set in URL query parameter.
+! https://gist.github.com/wanglf/7acc591890dc0d8ceff1e7ec9af32a55?permalink_comment_id=5626972#gistcomment-5626972
+marketplace.visualstudio.com##+js(rpnt, script, /"(DisableVSCodeDownloadButtonEnabled|Microsoft\.VisualStudio\.Services\.Gallery\.DisableVSCodeDownloadButton)":true/, "$1":false)
+
+! Rebble enable dev settings
+! $rootScope.showDevSettings=config.SHOW_DEV_SETTINGS
+apps.rebble.io##+js(rpnt, script, =config.SHOW_DEV_SETTINGS, ="true")
+apps.repebble.com##+js(rpnt, script, =config.SHOW_DEV_SETTINGS, ="true")

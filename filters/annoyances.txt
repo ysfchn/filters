@@ -1,0 +1,63 @@
+! Disable floating drawers on Xitter
+x.com##[data-testid="DMDrawer"], [data-testid="GrokDrawer"]
+
+! Remove sticky shopping cart on the right on Amazon
+www.amazon.*###nav-flyout-ewc, #nav-flyout-anchor
+www.amazon.*##body:style(padding-right: 0px !important)
+
+! Remove sticky shopping cart on the right on Temu
+www.temu.com###mainHeader > div:style(padding-right: 0px !important)
+www.temu.com###mainToolbar:style(right: 0px !important)
+www.temu.com##div.double_sidebar_layout > div[style^='width']
+
+! Remove sticky shopping cart on the right on Trendyol
+www.trendyol.com###sideBarBasket,.side-bar-basket-body
+
+! Remove sticky shopping cart on the right on AliExpress
+aliexpress.com##body:remove-class(unfoldShopCart)
+aliexpress.com##body > section:style(padding-right: 0px !important)
+aliexpress.com###sidecart
+
+! Redact postal code on Amazon
+www.amazon.*###nav-global-location-slot #nav-global-location-popover-link > #glow-ingress-block > #glow-ingress-line2
+www.amazon.*###nav-global-location-slot #nav-packard-glow-loc-icon:style(margin-top: 0px !important)
+
+! Remove Amazon Prime signup pop-up being showed on every visit - for some reason
+www.amazon.*##body:style(overflow: auto !important)
+www.amazon.*##body > #SFXInjectableContainer
+www.amazon.*##body > #a-popover-lgtbox
+www.amazon.*##body > .a-modal-scroller:has(> .a-popover[aria-label="Prime Signup Dialog"])
+
+! Remove sticky top banner on Bitrefill
+www.bitrefill.com##body > div#root > div[class^='_wrapper_'] > div[class^='_container_'] > div[class^='_container_']
+
+! Remove rotating promotion navbar on Onedio
+onedio.com##div.nav--desktop:upward(nav)
+
+! Remove hot auctions on Dynadot
+www.dynadot.com###hot-auctions
+
+! Remove Copilot banners on GitHub
+github.com##copilot-dashboard-entrypoint
+github.com##.copilotPreview__container
+
+! Remove recent pages section on Reddit
+www.reddit.com##reddit-recent-pages
+www.reddit.com###premium-header-campaign
+
+! Remove trending header
+uquiz.com##.trending_header
+
+! Remove distracting green rings on collapsed sidebar in Kick
+kick.com###sidebar-wrapper .ring-green-500:style(--tw-ring-color: transparent !important;)
+kick.com###sidebar-wrapper [data-testid^='sidebar-recommended-channel']
+
+! Disable client-side captcha on DHL e-Commerence (formerly MNG Kargo)
+dhlecommerce.com.tr##+js(set, btnClickCaptchaControl, trueFunc, runAt, 3)
+dhlecommerce.com.tr##li[id^='captchaArea']
+
+! Remove Chrome browser check
+||esatis.uyap.gov.tr/theme/js/chrome-controller.js
+
+! Avoid translating Reddit posts from Google search results
+||reddit.com$removeparam=tl
