@@ -3,24 +3,25 @@ x.com##[data-testid="DMDrawer"], [data-testid="GrokDrawer"]
 
 ! Remove sticky shopping cart on the right on Amazon
 www.amazon.*###nav-flyout-ewc, #nav-flyout-anchor
-www.amazon.*##body:style(padding-right: 0px !important)
+www.amazon.*##body:style(padding-right: 0 !important)
 
 ! Remove sticky shopping cart on the right on Temu
-www.temu.com###mainHeader > div:style(padding-right: 0px !important)
-www.temu.com###mainToolbar:style(right: 0px !important)
+www.temu.com###mainHeader > div:style(padding-right: 0 !important)
+www.temu.com###mainToolbar:style(right: 0 !important)
 www.temu.com##div.double_sidebar_layout > div[style^='width']
 
 ! Remove sticky shopping cart on the right on Trendyol
 www.trendyol.com###sideBarBasket,.side-bar-basket-body
+www.trendyol.com##body:style(padding-right: 0 !important)
 
 ! Remove sticky shopping cart on the right on AliExpress
 aliexpress.com##body:remove-class(unfoldShopCart)
-aliexpress.com##body > section:style(padding-right: 0px !important)
+aliexpress.com##body > section:style(padding-right: 0 !important)
 aliexpress.com###sidecart
 
 ! Redact postal code on Amazon
 www.amazon.*###nav-global-location-slot #nav-global-location-popover-link > #glow-ingress-block > #glow-ingress-line2
-www.amazon.*###nav-global-location-slot #nav-packard-glow-loc-icon:style(margin-top: 0px !important)
+www.amazon.*###nav-global-location-slot #nav-packard-glow-loc-icon:style(margin-top: 0 !important)
 
 ! Remove Amazon Prime signup pop-up being showed on every visit - for some reason
 www.amazon.*##body:style(overflow: auto !important)
@@ -61,3 +62,18 @@ dhlecommerce.com.tr##li[id^='captchaArea']
 
 ! Avoid translating Reddit posts from Google search results
 ||reddit.com$removeparam=tl
+
+! Skip Hepsiburada tracking links
+||adservice.hepsiburada.com$urlskip=?redirect
+
+! Skip Donanım Haber redirection warning
+! They don't pass fragments to the target URL, so this filter potentially also fixes URLs with fragments posted in their forum.
+||forum.donanimhaber.com/ExternalLinkRedirect$urlskip=/.*&url=(.*)/
+
+! Skip Turkish influencer affiliate links
+||tr.rdrtr.com$urlskip=?url -blocked
+||red.rdrtr.com$urlskip=?web_url -blocked
+||api.beta.fenomio.com/l$urlskip=?targetLink -blocked
+
+! Url skip for paylaskazan.teknosa.com links
+||rdr.btrck.com$urlskip=?aff_sub3 /^(teknosa\.com\/.*)/ +https
