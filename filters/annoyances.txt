@@ -23,12 +23,6 @@ aliexpress.com###sidecart
 www.amazon.*###nav-global-location-slot #nav-global-location-popover-link > #glow-ingress-block > #glow-ingress-line2
 www.amazon.*###nav-global-location-slot #nav-packard-glow-loc-icon:style(margin-top: 0 !important)
 
-! Remove Amazon Prime signup pop-up being showed on every visit - for some reason
-www.amazon.*##body:style(overflow: auto !important)
-www.amazon.*##body > #SFXInjectableContainer
-www.amazon.*##body > #a-popover-lgtbox
-www.amazon.*##body > .a-modal-scroller:has(> .a-popover[aria-label="Prime Signup Dialog"])
-
 ! Remove sticky top banner on Bitrefill
 www.bitrefill.com##body > div#root > div[class^='_wrapper_'] > div[class^='_container_'] > div[class^='_container_']
 
